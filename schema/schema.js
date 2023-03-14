@@ -64,4 +64,4 @@ const schema = new GraphQLSchema({
 
 export default schema
 
-// http://localhost:5000/graphql
+// hello
