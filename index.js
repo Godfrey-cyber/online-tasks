@@ -21,9 +21,11 @@ mongoose.connection.on("disconnected", () => {
 
 app.use('/graphql', graphqlHTTP({
 	schema,
-	graphiql: process.env.NODE_ENV === "development"
+	graphiql: process.env.NODE_ENV === "development",
+	introspection: true, // Enables GraphiQL
+  	playground: true,    // Enables GraphQL Playground (alternative to GraphiQL)
 }))
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 5000, () => {
 	console.log(`Server running on port ${process.env.PORT}`.yellow.underline.bold)
 })
